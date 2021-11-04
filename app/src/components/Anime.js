@@ -46,9 +46,9 @@ const Anime = ({ anime, isFetching, error, dispatch }) => {
           {anime.duration && (
             <p className='details'>Duration: {anime.duration}</p>
           )}
-          {anime.genres && (
+          {anime.genres.length > 0 && (
             <p className='details'>
-              Genres: {anime.genres.map((genre) => genre.name).join(', ')}
+              Genre: {anime.genres.map((genre) => genre.name).join(', ')}
             </p>
           )}
           {anime.source && (
