@@ -49,16 +49,16 @@ const Anime = ({ anime, isFetching, error, dispatch }) => {
         </div>
         <div className='right'>
           {anime.synopsis && (
-            <div className='synopsis'>
+            <>
               <p className='subheadings'>Synopsis:</p>
-              <span>{anime.synopsis}</span>
+              <p className='synopsis'>{anime.synopsis}</p>
               {anime.trailer.embed_url && (
                 <div>
                   <p className='subheadings'>Trailer:</p>
                   <iframe src={anime.trailer.embed_url} title={anime.title} />
                 </div>
               )}
-            </div>
+            </>
           )}
         </div>
       </div>
