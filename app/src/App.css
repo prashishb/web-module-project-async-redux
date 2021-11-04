@@ -1,6 +1,7 @@
 .App {
   position: relative;
   top: 10px;
+  min-height: 100vh;
 }
 
 h1 {
@@ -64,6 +65,8 @@ iframe {
   height: 250px;
 }
 
+/* NAVBAR */
+
 button {
   position: relative;
   color: white;
@@ -123,6 +126,47 @@ nav {
   width: 100%;
   padding: 0 24px;
   max-width: 1100px;
+}
+
+/* FOOTER SECTION */
+
+.footer {
+  margin-top: 2%;
+  background: #1d43a7;
+  padding: 30px 0px;
+  text-align: center;
+}
+
+.footer .footer-row {
+  width: 100%;
+  margin: 1% 0;
+  padding: 0.6% 0;
+  color: gray;
+  font-size: 0.8rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10%;
+}
+
+.footer .footer-row a {
+  text-decoration: none;
+  color: #7f7f7f;
+  transition: 0.5s;
+  margin: 0 1%;
+}
+
+.footer .footer-row a:hover {
+  color: white;
+}
+
+.copyright {
+  color: #7f7f7f;
+  margin: 0;
+  padding: 0;
 }
 
 @media (min-width: 769px) {
