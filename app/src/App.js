@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
 import Anime from './components/Anime';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className='App'>
-      <h1 className='header-title'>Random Anime</h1>
+    <>
+      <Navbar />
       <Anime />
-    </div>
+    </>
   );
 }
 

@@ -15,18 +15,8 @@ const Anime = ({ anime, isFetching, error, dispatch }) => {
     return <h1>Loading Anime...</h1>;
   }
 
-  const handleClick = () => {
-    dispatch(getAnime());
-  };
-
-  const genres = anime.genres
-    .map((genre) => {
-      return genre.name;
-    })
-    .join(', ');
-
   return (
-    <>
+    <div className='App'>
       <div className='container'>
         <div className='left'>
           <h2>{anime.title}</h2>
@@ -50,9 +40,12 @@ const Anime = ({ anime, isFetching, error, dispatch }) => {
           {anime.duration && (
             <p className='details'>Duration: {anime.duration}</p>
           )}
-          {anime.genres && <p className='details'>Genres: {genres}</p>}
+          {anime.genres && (
+            <p className='details'>
+              Genres: {anime.genres.map((genre) => genre.name).join(', ')}
+            </p>
+          )}
           {anime.score && <p className='details'>Score: {anime.score}</p>}
-          <button onClick={handleClick}>Next</button>
         </div>
         <div className='right'>
           {anime.synopsis && (
@@ -69,7 +62,7 @@ const Anime = ({ anime, isFetching, error, dispatch }) => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

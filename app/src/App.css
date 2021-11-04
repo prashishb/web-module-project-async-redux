@@ -1,5 +1,6 @@
 .App {
-  background: #e1e7f5;
+  position: relative;
+  top: 100px;
 }
 
 .App-logo {
@@ -58,7 +59,8 @@ img {
   padding: 0.2%;
   border: 1px solid #bebebe;
   margin-bottom: 2%;
-  max-width: 220px;
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
@@ -66,7 +68,8 @@ img {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: 0 1%;
+  padding: 1%;
+  background: #e1e7f5;
 }
 
 .left {
@@ -118,34 +121,69 @@ iframe {
 }
 
 button {
-  color: #282c34;
-  border: 1px solid #282c34;
-  outline: none;
-  background: transparent;
+  color: white;
+  background-color: #1d43a7;
+  border: 1px solid #1d43a7;
   border-radius: 5px;
-  padding: 1% 5%;
-  margin: 1% auto;
+  height: 5vh;
   font-size: 1.2rem;
   cursor: pointer;
   transition: 0.1s all ease-in-out;
 }
 
 button:hover {
-  background-color: #282c34;
-  color: white;
+  filter: brightness(1.4);
+}
+
+nav {
+  background: #fff;
+  height: 80px;
+  margin-top: -80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-logo {
+  justify-self: flex-start;
+  font-size: 1.5rem;
+  line-height: 80px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-right: -22px;
+  padding: 0 1rem;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  padding: 0 24px;
+  max-width: 1100px;
 }
 
 @media (min-width: 769px) {
-  .App {
+  .container {
     width: 70%;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0px 0px 10px #ccc;
-    margin: 1% auto;
-  }
-  .container {
+    margin: 0 auto;
     flex-direction: row;
-    padding: 0 5%;
   }
   .left {
     width: 40%;
@@ -162,6 +200,6 @@ button:hover {
     padding: 0.2%;
     border: 1px solid #bebebe;
     margin-bottom: 2%;
-    max-width: 400px;
+    /* max-width: 400px; */
   }
 }
