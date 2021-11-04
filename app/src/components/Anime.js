@@ -8,35 +8,68 @@ const Anime = ({ anime, isFetching, error, dispatch }) => {
   }, [dispatch]);
 
   if (error) {
-    return <h2>Error: {error}</h2>;
+    return <h1>Error: {error}</h1>;
   }
 
   if (isFetching) {
-    return <h2>Loading Anime...</h2>;
+    return <h1>Loading Anime...</h1>;
   }
 
   const handleClick = () => {
     dispatch(getAnime());
   };
 
+  const genres = anime.genres
+    .map((genre) => {
+      return genre.name;
+    })
+    .join(', ');
+
   return (
-    <div>
-      <h2>{anime.title}</h2>
-      <img src={anime.images.jpg.image_url} alt={anime.title} />
-      <p className='details'>Aired: {anime.aired.string}</p>
-      {anime.episodes && <p className='details'>Episodes: {anime.episodes}</p>}
-      {anime.score && <p className='details'>Score: {anime.score}</p>}
-      <div className='synopsis'>
-        <span>{anime.synopsis}</span>
-      </div>
-      {anime.trailer.embed_url && (
-        <div>
-          <p className='details'>Trailer: </p>
-          <iframe src={anime.trailer.embed_url} title={anime.title} />
+    <>
+      <div className='container'>
+        <div className='left'>
+          <h2>{anime.title}</h2>
+          <img src={anime.images.jpg.large_image_url} alt={anime.title} />
+          {anime.title_english && (
+            <>
+              <p className='subheadings info'>Alternative Titles:</p>
+              <p className='details'>English: {anime.title_english}</p>
+              {anime.title_japanese && (
+                <p className='details'>Japanese: {anime.title_japanese}</p>
+              )}
+            </>
+          )}
+          <p className='subheadings info'>Information:</p>
+          {anime.type && <p className='details'>Type: {anime.type}</p>}
+          {anime.year && <p className='details'>Aired: {anime.year}</p>}
+          {anime.season && <p className='details'>Season: {anime.season}</p>}
+          {anime.episodes && (
+            <p className='details'>Episodes: {anime.episodes}</p>
+          )}
+          {anime.duration && (
+            <p className='details'>Duration: {anime.duration}</p>
+          )}
+          {anime.genres && <p className='details'>Genres: {genres}</p>}
+          {anime.score && <p className='details'>Score: {anime.score}</p>}
+          <button onClick={handleClick}>Next</button>
         </div>
-      )}
-      <button onClick={handleClick}>Next</button>
-    </div>
+        <div className='right'>
+          {anime.synopsis && (
+            <div className='synopsis'>
+              <p className='subheadings'>Synopsis:</p>
+              <span>{anime.synopsis}</span>
+              {anime.trailer.embed_url && (
+                <div>
+                  <p className='subheadings'>Trailer:</p>
+                  <iframe src={anime.trailer.embed_url} title={anime.title} />
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    </>
   );
 };
 

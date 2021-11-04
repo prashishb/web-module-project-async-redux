@@ -5,7 +5,7 @@ import Anime from './components/Anime';
 function App() {
   return (
     <div className='App'>
-      <h1>Random Anime</h1>
+      <h1 className='header-title'>Random Anime</h1>
       <Anime />
     </div>
   );

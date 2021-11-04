@@ -5,15 +5,20 @@ const initialState = {
     images: {
       jpg: {
         image_url: '',
+        large_image_url: '',
       },
     },
     title: '',
+    title_english: '',
+    title_japanese: '',
+    type: '',
     synopsis: '',
     episodes: '',
     score: '',
-    aired: {
-      string: '',
-    },
+    year: '',
+    season: '',
+    genres: [{}],
+    duration: '',
     trailer: {
       url: '',
       embed_url: '',
