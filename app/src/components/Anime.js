@@ -33,7 +33,12 @@ const Anime = ({ anime, isFetching, error, dispatch }) => {
           <p className='subheadings info'>Information:</p>
           {anime.type && <p className='details'>Type: {anime.type}</p>}
           {anime.year && <p className='details'>Aired: {anime.year}</p>}
-          {anime.season && <p className='details'>Season: {anime.season}</p>}
+          {anime.season && (
+            <p className='details'>
+              Season:{' '}
+              {anime.season.charAt(0).toUpperCase() + anime.season.slice(1)}
+            </p>
+          )}
           {anime.episodes && (
             <p className='details'>Episodes: {anime.episodes}</p>
           )}
