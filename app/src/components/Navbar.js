@@ -10,7 +10,9 @@ function Navbar({ dispatch }) {
     <>
       <nav>
         <div className='navbar-container'>
-          <div className='navbar-logo'>randomAnime</div>
+          <div className='navbar-logo'>
+            random<span>Anime</span>
+          </div>
           <div className='navbar-links'>
             <button onClick={handleClick}>Refresh</button>
           </div>

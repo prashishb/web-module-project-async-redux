@@ -103,6 +103,10 @@ nav {
   text-decoration: none;
 }
 
+.navbar-logo span {
+  color: #1d43a7;
+}
+
 .navbar-links {
   display: flex;
   align-items: center;
