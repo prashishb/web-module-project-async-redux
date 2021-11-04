@@ -65,6 +65,13 @@ iframe {
   height: 250px;
 }
 
+.trailer-note {
+  margin: 0;
+  padding: 0;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
 /* NAVBAR */
 
 button {

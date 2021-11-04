@@ -31,6 +31,7 @@ const Anime = ({ anime, isFetching, error, dispatch }) => {
             </>
           )}
           <p className='subheadings info'>Information:</p>
+          {anime.score && <p className='details'>Score: {anime.score}</p>}
           {anime.type && <p className='details'>Type: {anime.type}</p>}
           {anime.year && <p className='details'>Aired: {anime.year}</p>}
           {anime.season && (
@@ -50,7 +51,15 @@ const Anime = ({ anime, isFetching, error, dispatch }) => {
               Genres: {anime.genres.map((genre) => genre.name).join(', ')}
             </p>
           )}
-          {anime.score && <p className='details'>Score: {anime.score}</p>}
+          {anime.source && (
+            <p className='details'>
+              Source:{' '}
+              {anime.source
+                .split(' ')
+                .map((elem) => elem[0].toUpperCase() + elem.substr(1))
+                .join(' ')}
+            </p>
+          )}
         </div>
         <div className='right'>
           {anime.synopsis && (
@@ -64,6 +73,9 @@ const Anime = ({ anime, isFetching, error, dispatch }) => {
                     src={anime.trailer.embed_url.split('&autoplay=1').join('')}
                     title={anime.title}
                   />
+                  <p className='trailer-note'>
+                    Trailer may be unavailable in certain regions.
+                  </p>
                 </div>
               )}
             </>
