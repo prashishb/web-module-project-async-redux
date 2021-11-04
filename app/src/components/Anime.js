@@ -60,7 +60,10 @@ const Anime = ({ anime, isFetching, error, dispatch }) => {
               {anime.trailer.embed_url && (
                 <div>
                   <p className='subheadings'>Trailer:</p>
-                  <iframe src={anime.trailer.embed_url} title={anime.title} />
+                  <iframe
+                    src={anime.trailer.embed_url.split('&autoplay=1').join('')}
+                    title={anime.title}
+                  />
                 </div>
               )}
             </>
