@@ -1,4 +1,12 @@
 .App {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0;
+}
+
+/* .App {
   position: relative;
   top: 10px;
   min-height: 100vh;
@@ -74,7 +82,7 @@ iframe {
 
 /* NAVBAR */
 
-button {
+/* button {
   position: relative;
   color: white;
   background-color: #1d43a7;
@@ -134,11 +142,11 @@ nav {
   width: 100%;
   padding: 0 24px;
   max-width: 1100px;
-}
+} */
 
 /* FOOTER SECTION */
 
-.footer {
+/* .footer {
   margin-top: 2%;
   background: #1d43a7;
   padding: 30px 0px;
@@ -198,4 +206,4 @@ nav {
   .navbar-logo {
     font-size: 1.5rem;
   }
-}
+} */

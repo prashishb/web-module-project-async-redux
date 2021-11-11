@@ -6,14 +6,28 @@ export const FETCH_ERROR = 'FETCH_ERROR';
 
 export const getAnime = () => {
   return (dispatch) => {
-    dispatch({ type: FETCH_START });
+    dispatch(fetchStart());
     axios
       .get('https://api.jikan.moe/v4/random/anime')
       .then((res) => {
         dispatch(fetchSuccess(res.data.data));
       })
       .catch((err) => {
-        dispatch(fetchError(err));
+        dispatch(fetchError('y u no work'));
+      });
+  };
+};
+
+export const getAnimeById = (id) => {
+  return (dispatch) => {
+    dispatch(fetchStart());
+    axios
+      .get(`https://api.jikan.moe/v4/anime/${id}`)
+      .then((res) => {
+        dispatch(fetchSuccess(res.data.data));
+      })
+      .catch((err) => {
+        dispatch(fetchError('Unable to fetch data with ID'));
       });
   };
 };
